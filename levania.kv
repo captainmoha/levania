@@ -1,0 +1,21 @@
+#:import CameraWidget plugins.camera.CameraWidget
+
+<LevBox>:
+	orientation: 'vertical'
+	
+	CameraWidget:
+		id: cam
+		anchor_x: 'center'
+		anchor_y: 'center'
+	FloatLayout:
+		BoxLayout:
+			orientation: 'vertical'
+			Button:
+				text: 'Find the moon!'
+				background_color: (.2, .3, .8, 1)
+				height: 150
+				size_hint_y: None
+				font_size: 32
+				on_release: cam.start()
+
+	
