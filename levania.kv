@@ -1,0 +1,26 @@
+<MainMenu>:
+	# canvas.before:
+	# 	Rectangle:
+	# 		size: self.size 
+	# 		pos: self.pos 
+	# 		source: 'static/moonbg.jpg'
+	LevBox:
+		orientation: 'vertical'
+		Camera:
+			id: cam
+			center: self.parent.center
+			resolution: (1024, 768)
+			allow_stretch: True
+			# keep_ratio: True
+			width: self.parent.width
+			height: self.parent.height
+			size_hint_x: None
+			size_hint_y: None
+		Button:
+			text: 'Find the moon!'
+			background_color: (.2, .3, .8, 1)
+			height: 150
+			size_hint_y: None
+			width: self.parent.width
+			font_size: 32
+			# on_release: find the moon
