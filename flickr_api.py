@@ -72,5 +72,3 @@ def getAlbumImages(albumId):
 	albumImages = json.loads(albumImages)
 
 	return [getStaticUrl(x) for x in albumImages['photoset']['photo']]
-
-print getRandomPic(album='72157658601662068')
