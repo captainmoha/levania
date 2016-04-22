@@ -1,3 +1,4 @@
+
 <MainMenu>:
 	# canvas.before:
 	# 	Rectangle:
@@ -9,18 +10,29 @@
 		Camera:
 			id: cam
 			center: self.parent.center
-			resolution: (1024, 768)
+			resolution: (640, 480)
 			allow_stretch: True
 			# keep_ratio: True
 			width: self.parent.width
 			height: self.parent.height
 			size_hint_x: None
 			size_hint_y: None
-		Button:
-			text: 'Find the moon!'
+
+
+		# Button:
+		# 	text: 'Find the Moon!'
+		# 	background_color: (.2, .3, .8, 1)
+		# 	height: 150
+		# 	size_hint_y: None
+		# 	width: self.parent.width
+		# 	font_size: 32
+		# 	# on_release: find the moon
+
+		Label:
+
+			text: app.loc.gps_location
 			background_color: (.2, .3, .8, 1)
 			height: 150
 			size_hint_y: None
 			width: self.parent.width
 			font_size: 32
-			# on_release: find the moon

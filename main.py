@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
+from plugins.sensors.location import Location
 
 class MainMenu(FloatLayout):
 	pass
@@ -13,6 +14,7 @@ class LevBox(BoxLayout):
 class LevaniaApp(App):
 
 	def build(self):
+		self.loc = Location()
 		return MainMenu()
 
 if __name__ == '__main__':
