@@ -29,7 +29,7 @@ def getStaticUrl(image):
 
 
 def getPublicPics():
-	publicPics=urllib.urlopen("https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=fa16585b5d35839777dc45300b3ed2c3&user_id=136485307%40N06&format=json&nojsoncallback=1") 
+	publicPics=urllib.urlopen("https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=bcb5dcdd467ca41573628d9db143dbff&user_id=136485307%40N06&format=json&nojsoncallback=1") 
 	publicPics = publicPics.read()
 	publicPics = json.loads(publicPics)
 
@@ -56,7 +56,7 @@ def getRandomPic(album=None):
 '''get albums of Project Apollo Archive'''
 
 def getAlbums():
-	albums=urllib.urlopen(" https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=fa16585b5d35839777dc45300b3ed2c3&user_id=136485307%40N06&format=json&nojsoncallback=1")
+	albums=urllib.urlopen(" https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=bcb5dcdd467ca41573628d9db143dbff&user_id=136485307%40N06&format=json&nojsoncallback=1")
 	albums = albums.read()
 	albums = json.loads(albums)
 
@@ -67,7 +67,7 @@ def getAlbums():
 
 
 def getAlbumImages(albumId):
-	albumImages=urllib.urlopen("https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=fa16585b5d35839777dc45300b3ed2c3&photoset_id="+albumId+"&user_id=136485307%40N06&format=json&nojsoncallback=1 ")
+	albumImages=urllib.urlopen("https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=bcb5dcdd467ca41573628d9db143dbff&photoset_id="+albumId+"&user_id=136485307%40N06&format=json&nojsoncallback=1 ")
 	albumImages = albumImages.read()
 	albumImages = json.loads(albumImages)
 
