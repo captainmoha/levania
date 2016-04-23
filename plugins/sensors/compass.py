@@ -1,6 +1,4 @@
 import kivy
-kivy.require('1.7.0')
-
 from jnius import autoclass
 from kivy.app import App
 from kivy.properties import NumericProperty
