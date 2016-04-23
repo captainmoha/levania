@@ -8,13 +8,13 @@ from kivy.animation import Animation
 
 Hardware = autoclass('org.renpy.android.Hardware')
 
-class Compass:
+class Magnetometer:
 	output = (0,0,0)
 	def __init__(self):
 		Hardware.magneticFieldSensorEnable(True)
-		Clock.schedule_interval(self.update_compass, 1 / 10.)
+		Clock.schedule_interval(self.update_magnetometer, 1 / 10.)
 	
-	def update_compass(self, *args):
+	def update_magnetometer(self, *args):
 		self.output = Hardware.magneticFieldSensorReading()
 		print self.output
 		
