@@ -1,38 +1,46 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
 
-<MainMenu>:
-	# canvas.before:
-	# 	Rectangle:
-	# 		size: self.size 
-	# 		pos: self.pos 
-	# 		source: 'static/moonbg.jpg'
-	LevBox:
-		orientation: 'vertical'
-		Camera:
-			id: cam
-			center: self.parent.center
-			resolution: (640, 480)
-			allow_stretch: True
-			# keep_ratio: True
-			width: self.parent.width
-			height: self.parent.height
-			size_hint_x: None
-			size_hint_y: None
+<AndroidTabsBar>:
+    canvas.before:
+        Color:
+            rgba: get_color_from_hex('#03A9F4')
+        Rectangle:
+            pos: self.pos
+            size: self.size
 
+        # you can add a bit of shade if you want
+        Color:
+            rgba: 0,0,0,.3
+        Rectangle:
+            pos: self.pos[0], self.pos[1] - 1
+            size: self.size[0], 1
+        Color:
+            rgba: 0,0,0,.2
+        Rectangle:
+            pos: self.pos[0], self.pos[1] - 2
+            size: self.size[0], 1
+        Color:
+            rgba: 0,0,0,.05
+        Rectangle:
+            pos: self.pos[0], self.pos[1] - 3
+            size: self.size[0], 1
 
-		# Button:
-		# 	text: 'Find the Moon!'
-		# 	background_color: (.2, .3, .8, 1)
-		# 	height: 150
-		# 	size_hint_y: None
-		# 	width: self.parent.width
-		# 	font_size: 32
-		# 	# on_release: find the moon
+<MoonTab>:
+    Camera:
+        id: cam
+        center: self.parent.center
+        resolution: (640, 480)
+        allow_stretch: True
+        # keep_ratio: True
+        width: self.parent.width
+        height: self.parent.height
+        size_hint_x: None
+        size_hint_y: None
 
-		Label:
+<ImagesTab>:
+    Button:
+        text: root.text
 
-			text: app.loc.gps_location
-			background_color: (.2, .3, .8, 1)
-			height: 150
-			size_hint_y: None
-			width: self.parent.width
-			font_size: 32
+<StoriesTab>:
+    Button:
+        text: root.text
